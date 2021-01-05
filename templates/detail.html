@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Week</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .flex {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            background-color: orange;
+            border-radius: 25px;
+            color: white;
+            margin-top: 20px;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex">
+        <h1> {{filename.split('.')[0]}}</h1>
+    </div>
+    <div class="flex">
+        <img src="/static/uploads/{{ filename }}" alt="IMGTEST" height="530" width="375">
+    </div>
+    <div class="flex">
+        <p><b>Emotion recognizer:</b> 86% Neutral</p>
+    </div>
+    <div class="flex">
+        <audio controls>
+            <source src="/static/music/piano.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <div class="flex">
+        <a href="/static/music/piano.wav" download>
+            <button class="btn"><i class="fa fa-download"></i> Download song</button>
+        </a>
+    </div>
+</body>
+
+</html>
