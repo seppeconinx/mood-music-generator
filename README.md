@@ -7,4 +7,3 @@ and music generation ai.
 
 - Flask
 - Materialize css
-
