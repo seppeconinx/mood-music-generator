@@ -5,28 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovation Week</title>
-    <style>
-        .flex {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+
+    <!-- Materialze -->
+    <link rel="stylesheet" href="/static/materialize/css/materialize.min.css">
+    <script src="/static/materialize/js/materialize.min.js" defer></script>
 </head>
 
 <body>
-    <div class="flex">
-        <h1>Innovation Week: Mood Music Generator</h1>
-    </div>
-    <div class="flex">
-        <h3>Upload new File</h3>
-    </div>
-    <div class="flex">
-        <p>Supported formats: png, jpg, jpeg</p>
-    </div>
-    <div class="flex">
+    <div class="container">
+        <div>
+            <h1>Mood Music Generator <br>EhB Innovation Week 2020</h1>
+        </div>
+
+        <div>
+            <h3>Upload new File</h3>
+        </div>
+
         <form method=post enctype=multipart/form-data>
-            <input type=file name=file>
-            <input type=submit value=Upload>
+            <div class="row">
+                <div class ="file-field input-field">
+                    <div class ="btn">
+                        <span>Browse</span>
+                        <input 
+                            type="file"
+                            name="file"
+                        />
+                    </div>
+
+                    <div class = file-path-wrapper>
+                        <input 
+                            class="file-path validate" 
+                            type="text"
+                            placeholder="Supported formats: png, jpg, jpeg"
+                        />
+                    </div>
+                </div>
+
+                <input type=submit value=Upload class="btn">
+            </div>
         </form>
     </div>
 </body>

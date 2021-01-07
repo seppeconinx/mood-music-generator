@@ -1,4 +1,9 @@
-## Innovation Week- Mood Music Generator
+# Innovation Week - Mood Music Generator
 
-Music Generator:
-https://colab.research.google.com/drive/1og5I-xXl1BWis5wZQGgAA7LdayfMqp9n#scrollTo=uMzP7jHiMi1S
+This project contains the web server that wraps the mood detecting
+and music generation ai.
+
+## Dependencies
+
+- Flask
+- Materialize css
