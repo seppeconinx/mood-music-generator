@@ -5,27 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovation Week</title>
+    <!-- MIDI player -->
+    <script src="/static/javascript/midi.js"></script>
+    <script type="text/javascript">
+        var mp;
+
+        function init() {
+            mp = new MidiPlayer('/static/music/Bach_Badinerie.mid', 'btn');
+        }
+
+        function doPlay(m, btn) {
+            if (btn.value == 'play') {
+                m.play();
+                btn.value = 'stop';
+            }
+            else {
+                m.stop();
+                btn.value = 'play';
+            }
+        }
+    </script>
 
     <!-- Materialze -->
     <link rel="stylesheet" href="/static/materialize/css/materialize.min.css">
     <script src="/static/materialize/js/materialize.min.js" defer></script>
 
+    <!-- Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body>
+<body onload="javascript:init();">
     <div class="container">
         <div class="row" style="text-align: center">
             <h1> {{filename.split('.')[0]}}</h1>
         </div>
 
         <div class="row">
-            <img
-                src="/static/uploads/{{ filename }}" 
-                alt="IMGTEST" 
-                class="material-boxed"
-                width="100%"
-            />
+            <img src="/static/uploads/{{ filename }}" alt="IMGTEST" class="material-boxed" width="100%" />
             <div>
                 <b>Emotion recognizer:</b> {{ emotion[1] + '% ' + emotion[0]}}
                 <div class="progress">
@@ -35,13 +51,10 @@
         </div>
 
         <div class="row">
-            <audio controls>
-                <source src="/static/music/piano.wav" type="audio/wav">
-                Your browser does not support the audio element.
-            </audio>
+            Song: <input type="button" value="play" id='btn' onclick="doPlay(mp, this);" /><br /><br />
         </div>
         <div class="row">
-            <a class="btn" href="/static/music/piano.wav">
+            <a class="btn" href="/static/music/Bach_Badinerie.mid">
                 <i class="material-icons left">download</i>
                 Download song
             </a>
