@@ -15,12 +15,12 @@
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" style="text-align: center">
             <h1> {{filename.split('.')[0]}}</h1>
         </div>
 
         <div class="row">
-            <img 
+            <img
                 src="/static/uploads/{{ filename }}" 
                 alt="IMGTEST" 
                 class="material-boxed"
@@ -29,7 +29,7 @@
             <div>
                 <b>Emotion recognizer:</b> {{ emotion[1] + '% ' + emotion[0]}}
                 <div class="progress">
-                    <div class="determinate" style="width: 68%"></div>
+                    <div class="determinate" style="width: {{ emotion[1] }}%"></div>
                 </div>
             </div>
         </div>
