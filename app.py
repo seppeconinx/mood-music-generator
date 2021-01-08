@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, flash, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
+import face_recognizer as fr
 
 UPLOAD_FOLDER = './static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -34,7 +35,7 @@ def upload_file():
 
 @app.route('/detail/<filename>')
 def uploaded_file(filename):
-    return render_template('detail.html', filename = filename)
+    return render_template('detail.html', filename = filename, emotion = fr.get_emotion('static\\uploads\\' + filename))
     # return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
     
 
