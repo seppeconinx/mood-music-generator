@@ -35,7 +35,13 @@ def upload_file():
 
 @app.route('/detail/<filename>')
 def uploaded_file(filename):
-    return render_template('detail.html', filename = filename, emotion = fr.get_emotion('static\\uploads\\' + filename))
+    emotion = fr.get_emotion('static\\uploads\\' + filename)
+    song = 'piano.wav'
+    if emotion[0] == 'happiness':
+        song = 'happy_generated.mid'
+    if emotion[0] == 'sadness':
+        song = 'sad_generated.mid'
+    return render_template('detail.html', filename = filename, emotion = emotion, song = song)
     # return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
     
 

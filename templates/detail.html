@@ -11,7 +11,7 @@
         var mp;
 
         function init() {
-            mp = new MidiPlayer('/static/music/Bach_Badinerie.mid', 'btn');
+            mp = new MidiPlayer('/static/music/{{ song }}', 'btn');
         }
 
         function doPlay(m, btn) {
@@ -54,7 +54,7 @@
             Song: <input type="button" value="play" id='btn' onclick="doPlay(mp, this);" /><br /><br />
         </div>
         <div class="row">
-            <a class="btn" href="/static/music/Bach_Badinerie.mid">
+            <a class="btn" href="/static/music/{{ song }}">
                 <i class="material-icons left">download</i>
                 Download song
             </a>
