@@ -4,9 +4,9 @@ import io
 
 
 # My super secret Azure Key
-KEY = "d09620f2c7624e7b9b88e4cca11694e0"
+KEY = "?"
 # My  Azure cognitive services endpoint
-ENDPOINT = "https://west-eu.cognitiveservices.azure.com"
+ENDPOINT = "?"
 face_api_url = ENDPOINT + '/face/v1.0/detect'
 
 headers = {'Ocp-Apim-Subscription-Key': KEY,
